@@ -36,6 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         `;
 
+        // Add delete icon for unregistering participants
+        const deleteIcon = document.createElement('span');
+        deleteIcon.innerHTML = '🗑️'; // Unicode for delete icon
+        deleteIcon.className = 'delete-icon';
+        deleteIcon.style.cursor = 'pointer';
+        deleteIcon.addEventListener('click', () => {
+          // Logic to unregister participant
+          unregisterParticipant(name);
+        });
+        activityCard.appendChild(deleteIcon);
+
         activitiesList.appendChild(activityCard);
 
         // Add option to select dropdown
